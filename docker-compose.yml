@@ -1,0 +1,10 @@
+nifi:
+  build: .
+  container_name: nifi
+  ports:
+    - "28080:8080"
+#  links: 
+#    - hbase
+#    - kafka
+#  volumes:
+#    - /dev/xsl:/opt/nifi/xsl
