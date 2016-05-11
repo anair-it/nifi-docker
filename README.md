@@ -1,4 +1,4 @@
-# Nifi docker image
+# Nifi docker
 Build a nifi docker image on Alpine Linux distro.
 
 ## Version
@@ -26,6 +26,6 @@ http://localhost:28080
 - /opt/nifi/xsl directory is created to hold XSL documents for transformation. Use "volumes" in docker-compose.yml to mount a host xsl directory to the container /opt/nifi/xsl directory
 
 ## Reference
-[Apache Nifi](https://nifi.apache.org/)
-[Docker](https://docs.docker.com/)
-[Docker compose](https://docs.docker.com/compose/)
+- [Apache Nifi](https://nifi.apache.org/)
+- [Docker](https://docs.docker.com/)
+- [Docker compose](https://docs.docker.com/compose/)
