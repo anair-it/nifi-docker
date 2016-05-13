@@ -1,10 +1,17 @@
-FROM anoopnair/nifi_alpine
+FROM alpine
 MAINTAINER Anoop Nair<anoopnair.it@gmail.com>
 
 LABEL description="Build nifi image on Alpine Linux"
 
+ENV JAVA_HOME /usr/lib/jvm/java-1.7-openjdk
+ENV PATH $JAVA_HOME/bin:$PATH
 ENV NIFI_VERSION 0.6.1
 ENV NIFI_HOME /opt/nifi
+
+RUN apk --update add bash git wget ca-certificates sudo openssh rsync openjdk7 && \
+  rm -rf /var/cache/apk/* && \
+  rm -rf /opt  && \
+  mkdir -p /opt 
 
 # Download and Install nifi
 RUN wget -q http://www.webhostingjams.com/mirror/apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz && \

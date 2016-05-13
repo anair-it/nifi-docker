@@ -3,13 +3,14 @@ Build a nifi docker image on Alpine Linux distro.
 
 ## Version
 - Nifi: 0.6.1
+- IBM MQ client: 7.5.0.2
+- Oracle client: 11.2.0.3
 
 ## Exposed ports
 - Nifi web port: 8080
 
 ## Usage
 Build the image and start a cluster with zookeeper, hbase, kafka and nifi:
--  Build anair/hadoop_alipine_base image. Refer hadoop-docker-lite project
 - ``docker-compose up``
 
 Destroy cluster:
