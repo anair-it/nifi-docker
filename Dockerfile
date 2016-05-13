@@ -1,12 +1,12 @@
-FROM anair/hadoop_base_alpine
-MAINTAINER anair
+FROM anoopnair/nifi_alpine
+MAINTAINER Anoop Nair<anoopnair.it@gmail.com>
 
-LABEL description="Build nifi image"
+LABEL description="Build nifi image on Alpine Linux"
 
 ENV NIFI_VERSION 0.6.1
 ENV NIFI_HOME /opt/nifi
 
-# Download and Install nifi. Download IBM MQ and Oracle client jars into extra_lib directory
+# Download and Install nifi
 RUN wget -q http://www.webhostingjams.com/mirror/apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz && \
    tar xzf nifi-$NIFI_VERSION-bin.tar.gz -C /opt/ && \
    ln -s /opt/nifi-$NIFI_VERSION $NIFI_HOME && \
