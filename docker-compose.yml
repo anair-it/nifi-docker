@@ -1,10 +1,10 @@
 nifi:
-  build: .
-  container_name: nifi
+  image: anoopnair/nifi-alpine:latest
   ports:
     - "28080:8080"
-#  links: 
-#    - hbase
-#    - kafka
-#  volumes:
-#    - /dev/xsl:/opt/nifi/xsl
+  volumes:
+    - /dev/xsl:/opt/nifi/xsl
+  external_links:
+    - elasticsearchkibanadocker_elasticsearch_1:elasticsearch
+
+  
