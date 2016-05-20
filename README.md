@@ -21,7 +21,7 @@ Destroy cluster:
 - Ctrl C
 
 ## Nifi UI
-http://localhost:28080
+http://localhost:28080/nifi
 
 ## Notes
 - IBM MQ and Oracle client libraries are copied to /opt/nifi/extra_lib directory on the container. This allows Nifi flows to talk to IBM MQ and Oracle
