@@ -1,5 +1,5 @@
 # Nifi docker
-Build a nifi docker image on Alpine Linux distro.
+Build a nifi docker image on Alpine Linux distro. A sample Nifi flow is included.
 
 ## Version
 - Nifi: 0.6.1
@@ -30,7 +30,7 @@ http://localhost:28080
 
 ## Nifi flow
 ### UDP log collector
-This Nifi flow collects logs on a UDP port and send them to elasticsearch
+This Nifi flow collects logs on a UDP port from a log4j based application and ship them to elasticsearch
 
 - Start elasticsearch and kibana
 - Create a elasticsearch index _applog_. ``curl -XPUT 'http://localhost:9200/applog/'``
@@ -40,8 +40,8 @@ This Nifi flow collects logs on a UDP port and send them to elasticsearch
 - Default UDP port is 9991
 - Check the elasticsearch connection info
 - Configure log4j to send JSON logs to UDP server in Nifi
-	- Add following dependencies
-	
+- Add following dependencies
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>apache-log4j-extras</artifactId>
@@ -53,13 +53,13 @@ This Nifi flow collects logs on a UDP port and send them to elasticsearch
 			<version>1.7</version>
 		</dependency>
 
-- Add the log4j UDP appender:
-	
-	<appender name="udp" class="org.apache.log4j.receivers.net.UDPAppender">
-	    <param name="RemoteHost" value="{Nifi-hostname}" />
-	    <param name="application" value="myapp" />
-	    <layout class="net.logstash.log4j.JSONEventLayoutV1"/>
-	</appender>
+- Add the log4j UDP appender that formats log statements to JSON format:
+
+		<appender name="udp" class="org.apache.log4j.receivers.net.UDPAppender">
+		    <param name="RemoteHost" value="{Nifi-hostname}" />
+		    <param name="application" value="myapp" />
+		    <layout class="net.logstash.log4j.JSONEventLayoutV1"/>
+		</appender>
 
 - Identify Nifi hostname using docker inspect and replace {Nifi-hostname} with docker Nifi IP
 - Run the application program to spit out log statements
