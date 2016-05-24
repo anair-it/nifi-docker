@@ -67,6 +67,15 @@ This Nifi flow collects logs on a UDP port from a log4j based application and sh
 - Run the application program to spit out log statements
 - Check out kibana to see logs
 
+## Controller services
+### JMS Connection Factory provider
+Here is the screenshot of setting up connection to IBM MQ:
+![alt text](nifi-mq-controller-service.PNG)
+
+### DBCP Connection Pool
+Here is the screenshot of setting up connection to Oracle DB:
+![alt text](nifi-oracle-controller-service.PNG)
+
 ## Reference
 - [Apache Nifi](https://nifi.apache.org/)
 - [Docker](https://docs.docker.com/)
