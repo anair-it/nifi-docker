@@ -67,10 +67,14 @@ This Nifi flow collects logs on a UDP port from a log4j based application and sh
 - Run the application program to spit out log statements
 - Check out kibana to see logs
 
-## Controller services
+## Controller services for MQ and Oracle
 ### JMS Connection Factory provider
 Here is the screenshot of setting up connection to IBM MQ:
 ![alt text](nifi-mq-controller-service.PNG)
+
+- Use __PublshJMS__ to publish to an IBM MQ Queue
+- Use __ConsumeJMS__ to consume fro an IBM MQ Queue. 
+- Enter the Queue name and setup the controller service and you are good to go
 
 ### DBCP Connection Pool
 Here is the screenshot of setting up connection to Oracle DB:
