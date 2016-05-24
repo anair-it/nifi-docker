@@ -6,6 +6,8 @@ Build a nifi docker image on Alpine Linux distro. A sample Nifi flow is included
 - IBM MQ client: 7.5.0.2
 - Oracle client: 11.2.0.3
 
+>Dockerhub: https://hub.docker.com/r/anoopnair/nifi-alpine/
+
 ## Usage
 If you want Nifi to connect Elasticsearch, follow the steps
 1. Start a elasticsearch docker instance
