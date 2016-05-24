@@ -72,8 +72,8 @@ This Nifi flow collects logs on a UDP port from a log4j based application and sh
 Here is the screenshot of setting up connection to IBM MQ:
 ![alt text](nifi-mq-controller-service.PNG)
 
-- Use __PublshJMS__ to publish to an IBM MQ Queue
-- Use __ConsumeJMS__ to consume fro an IBM MQ Queue. 
+- Use __PublshJMS__ Nifi processor to publish to an IBM MQ Queue
+- Use __ConsumeJMS__ Nifi processor to consume from an IBM MQ Queue
 - Enter the Queue name and setup the controller service and you are good to go
 
 ### DBCP Connection Pool
