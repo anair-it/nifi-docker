@@ -1,5 +1,5 @@
 nifi:
-  image: anoopnair/nifi-alpine:latest
+  image: anoopnair/nifi-alpine:1.1.0
   ports:
     - "28080:8080"
   volumes:
