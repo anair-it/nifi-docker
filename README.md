@@ -2,7 +2,7 @@
 Build a nifi docker image on Alpine Linux distro. A sample Nifi flow is included.
 
 ## Version
-- Nifi: 1.1.0
+- Nifi: 1.1.2
 - IBM MQ client: 7.5.0.2
 - Oracle client: 11.2.0.3
 

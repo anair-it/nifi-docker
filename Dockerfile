@@ -1,11 +1,11 @@
 FROM alpine
 MAINTAINER Anoop Nair<anoopnair.it@gmail.com>
 
-LABEL description="Build nifi 1.1.0 image on Alpine Linux"
+LABEL description="Build nifi 1.1.2 image on Alpine Linux"
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV PATH $JAVA_HOME/bin:$PATH
-ENV NIFI_VERSION 1.1.0
+ENV NIFI_VERSION 1.1.2
 ENV NIFI_HOME /opt/nifi
 
 RUN apk --update add bash git wget ca-certificates sudo openssh rsync openjdk8 && \
@@ -14,7 +14,7 @@ RUN apk --update add bash git wget ca-certificates sudo openssh rsync openjdk8 &
   mkdir -p /opt 
 
 # Download and Install nifi
-RUN wget -q http://mirror.cogentco.com/pub/apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz && \
+RUN wget -q http://apache.mesi.com.ar/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz && \
    tar xzf nifi-$NIFI_VERSION-bin.tar.gz -C /opt/ && \
    ln -s /opt/nifi-$NIFI_VERSION $NIFI_HOME && \
    rm nifi-$NIFI_VERSION-bin.tar.gz && \ 
