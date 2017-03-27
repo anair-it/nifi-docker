@@ -1,10 +1,24 @@
 nifi:
   image: anoopnair/nifi-alpine:latest
+  container_name: nifi
   ports:
     - "28080:8080"
-  volumes:
-    - /dev/xsl:/opt/nifi/xsl
-  external_links:
-    - elasticsearchkibanadocker_elasticsearch_1:elasticsearch
+  links:
+    - elasticsearch  
 
-  
+elasticsearch:
+  image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  environment:
+     - bootstrap.memory_lock=false
+     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+     - "discovery.zen.ping.unicast.hosts=elasticsearch"
+
+kibana:
+  image: docker.elastic.co/kibana/kibana:5.2.2
+  ports:
+   - "5601:5601"
+  links:
+    - elasticsearch
