@@ -30,9 +30,7 @@ Destroy cluster:
 
 
 ## Sample Nifi flow
-This flow takes in logs shipped from an application and puts into Elasticsearch. The sequence of setps:
-
-### UDP log collector
+### UDP application log collector
 This Nifi flow collects logs on a UDP port from a log4j based application and ship them to elasticsearch
 
 - Create a elasticsearch index _applog_. ``curl --user elastic:changeme -XPUT 'http://localhost:9200/applog/'``
